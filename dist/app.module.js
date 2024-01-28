@@ -11,6 +11,7 @@ const common_1 = require("@nestjs/common");
 const graphql_1 = require("@nestjs/graphql");
 const apollo_1 = require("@nestjs/apollo");
 const UserResolver_1 = require("./graphql/resolvers/UserResolver");
+const UserSettingsResolver_1 = require("./graphql/resolvers/UserSettingsResolver");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -19,11 +20,11 @@ exports.AppModule = AppModule = __decorate([
         imports: [
             graphql_1.GraphQLModule.forRoot({
                 driver: apollo_1.ApolloDriver,
-                autoSchemaFile: 'src/schema.gql',
+                autoSchemaFile: "src/schema.gql",
             }),
         ],
         controllers: [],
-        providers: [UserResolver_1.UserResolver],
+        providers: [UserResolver_1.UserResolver, UserSettingsResolver_1.UserSettingsResolver],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map
